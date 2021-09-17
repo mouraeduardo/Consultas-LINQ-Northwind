@@ -12,7 +12,7 @@ namespace agoravai
 
             
             var Clientes = context.Customers.ToList();
-            var TodasAsCidades = Clientes.Select(x => x.City).OrderBy(x=> x).ToList();
+            var TodasAsCidades = Clientes.Select(x => x.City).Distinct().OrderBy(x=> x).ToList();
 
             foreach (var item in TodasAsCidades)
             {
